@@ -26,7 +26,10 @@
                             {{ trans('cruds.membershipsIndividual.fields.id') }}
                         </th>
                         <th>
-                            {{ trans('cruds.membershipsIndividual.fields.member_status') }}
+                            {{ trans('cruds.membershipsIndividual.fields.status') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.membershipsIndividual.fields.application_no') }}
                         </th>
                         <th>
                             {{ trans('cruds.membershipsIndividual.fields.member_class') }}
@@ -68,8 +71,16 @@
                         <td>
                             <select class="search">
                                 <option value>{{ trans('global.all') }}</option>
-                                @foreach($statuses as $key => $item)
+                                @foreach($status_memberships as $key => $item)
                                     <option value="{{ $item->status_name }}">{{ $item->status_name }}</option>
+                                @endforeach
+                            </select>
+                        </td>
+                        <td>
+                            <select class="search">
+                                <option value>{{ trans('global.all') }}</option>
+                                @foreach($individuals_apps as $key => $item)
+                                    <option value="{{ $item->application_no }}">{{ $item->application_no }}</option>
                                 @endforeach
                             </select>
                         </td>
@@ -121,7 +132,12 @@
                                 {{ $membershipsIndividual->id ?? '' }}
                             </td>
                             <td>
-                                {{ $membershipsIndividual->member_status->status_name ?? '' }}
+                                @foreach($membershipsIndividual->statuses as $key => $item)
+                                    <span class="badge badge-info">{{ $item->status_name }}</span>
+                                @endforeach
+                            </td>
+                            <td>
+                                {{ $membershipsIndividual->application_no->application_no ?? '' }}
                             </td>
                             <td>
                                 {{ $membershipsIndividual->member_class->member_class_name ?? '' }}
