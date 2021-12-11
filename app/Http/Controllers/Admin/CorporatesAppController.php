@@ -53,7 +53,7 @@ class CorporatesAppController extends Controller
 
         $corporatesApp->load('statuses');
 
-        return view('admin.corporatesApps.edit', compact('statuses', 'corporatesApp'));
+        return view('admin.corporatesApps.edit', compact('corporatesApp', 'statuses'));
     }
 
     public function update(UpdateCorporatesAppRequest $request, CorporatesApp $corporatesApp)
