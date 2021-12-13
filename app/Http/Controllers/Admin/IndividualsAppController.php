@@ -53,7 +53,7 @@ class IndividualsAppController extends Controller
 
         $individualsApp->load('statuses');
 
-        return view('admin.individualsApps.edit', compact('statuses', 'individualsApp'));
+        return view('admin.individualsApps.edit', compact('individualsApp', 'statuses'));
     }
 
     public function update(UpdateIndividualsAppRequest $request, IndividualsApp $individualsApp)
