@@ -53,7 +53,7 @@ class QualificationsAppController extends Controller
 
         $qualificationsApp->load('statuses');
 
-        return view('admin.qualificationsApps.edit', compact('statuses', 'qualificationsApp'));
+        return view('admin.qualificationsApps.edit', compact('qualificationsApp', 'statuses'));
     }
 
     public function update(UpdateQualificationsAppRequest $request, QualificationsApp $qualificationsApp)
