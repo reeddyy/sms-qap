@@ -1241,8 +1241,6 @@ return [
             'level_3_helper'             => ' ',
             'institute_3'                => '3. Institute',
             'institute_3_helper'         => ' ',
-            'year_attained_3'            => '3. Year Attained',
-            'year_attained_3_helper'     => ' ',
             'id_front'                   => 'ID Front',
             'id_front_helper'            => ' ',
             'id_back'                    => 'ID Back',
@@ -1265,6 +1263,8 @@ return [
             'officer_email_helper'       => ' ',
             'email'                      => 'Email',
             'email_helper'               => ' ',
+            'year_attained_3'            => '3. Year Attained',
+            'year_attained_3_helper'     => ' ',
         ],
     ],
     'statusApp' => [
