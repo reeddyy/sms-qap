@@ -31,7 +31,7 @@ class CoursesController extends Controller
 
         $class_intakes = ClassIntake::get();
 
-        return view('admin.courses.index', compact('courses', 'levels', 'modules', 'class_intakes'));
+        return view('admin.courses.index', compact('class_intakes', 'courses', 'levels', 'modules'));
     }
 
     public function create()
@@ -44,7 +44,7 @@ class CoursesController extends Controller
 
         $classes = ClassIntake::pluck('class_name', 'id');
 
-        return view('admin.courses.create', compact('levels', 'module_s', 'classes'));
+        return view('admin.courses.create', compact('classes', 'levels', 'module_s'));
     }
 
     public function store(StoreCourseRequest $request)
@@ -68,7 +68,7 @@ class CoursesController extends Controller
 
         $course->load('level', 'module_s', 'classes');
 
-        return view('admin.courses.edit', compact('levels', 'module_s', 'classes', 'course'));
+        return view('admin.courses.edit', compact('classes', 'course', 'levels', 'module_s'));
     }
 
     public function update(UpdateCourseRequest $request, Course $course)
