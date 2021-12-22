@@ -297,6 +297,12 @@ return [
             'module_s_helper'           => ' ',
             'classes'                   => 'Classes',
             'classes_helper'            => ' ',
+            'due_day_s_1st'             => '1st Due Day(s)',
+            'due_day_s_1st_helper'      => ' ',
+            'due_day_s_2nd'             => '2nd Due Day(s)',
+            'due_day_s_2nd_helper'      => ' ',
+            'due_day_s_3rd'             => '3rd Due Day(s)',
+            'due_day_s_3rd_helper'      => ' ',
         ],
     ],
     'officer' => [
