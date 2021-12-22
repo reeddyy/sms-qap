@@ -37,7 +37,7 @@ class EnrolmentsQualificationsController extends Controller
 
         $officers = Officer::get();
 
-        return view('admin.enrolmentsQualifications.index', compact('enrolmentsQualifications', 'status_qualifications', 'qualifications_apps', 'courses', 'class_intakes', 'individuals', 'officers'));
+        return view('admin.enrolmentsQualifications.index', compact('class_intakes', 'courses', 'enrolmentsQualifications', 'individuals', 'officers', 'qualifications_apps', 'status_qualifications'));
     }
 
     public function create()
@@ -56,7 +56,7 @@ class EnrolmentsQualificationsController extends Controller
 
         $officer_names = Officer::pluck('officer_name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.enrolmentsQualifications.create', compact('statuses', 'application_nos', 'course_titles', 'classes', 'student_names', 'officer_names'));
+        return view('admin.enrolmentsQualifications.create', compact('application_nos', 'classes', 'course_titles', 'officer_names', 'statuses', 'student_names'));
     }
 
     public function store(StoreEnrolmentsQualificationRequest $request)
@@ -86,7 +86,7 @@ class EnrolmentsQualificationsController extends Controller
 
         $enrolmentsQualification->load('statuses', 'application_no', 'course_title', 'classes', 'student_name', 'officer_name');
 
-        return view('admin.enrolmentsQualifications.edit', compact('statuses', 'application_nos', 'course_titles', 'classes', 'student_names', 'officer_names', 'enrolmentsQualification'));
+        return view('admin.enrolmentsQualifications.edit', compact('application_nos', 'classes', 'course_titles', 'enrolmentsQualification', 'officer_names', 'statuses', 'student_names'));
     }
 
     public function update(UpdateEnrolmentsQualificationRequest $request, EnrolmentsQualification $enrolmentsQualification)
