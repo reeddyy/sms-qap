@@ -289,8 +289,6 @@ return [
             'level_helper'              => ' ',
             'course_title'              => 'Course Title',
             'course_title_helper'       => ' ',
-            'duration_month'            => 'Duration (Month)',
-            'duration_month_helper'     => 'No. of Month(s)',
             'note'                      => 'Note',
             'note_helper'               => ' ',
             'module_s'                  => 'Module(s)',
@@ -303,6 +301,8 @@ return [
             'due_day_s_2nd_helper'      => ' ',
             'due_day_s_3rd'             => '3rd Due Day(s)',
             'due_day_s_3rd_helper'      => ' ',
+            'duration_month'            => 'Duration (Month)',
+            'duration_month_helper'     => 'No. of Month(s)',
         ],
     ],
     'officer' => [
