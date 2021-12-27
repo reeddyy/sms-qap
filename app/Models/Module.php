@@ -31,6 +31,7 @@ class Module extends Model
         'module_name',
         'module_abbr',
         'module_code',
+        'module_level_id',
         'module_status',
         'note',
         'created_at',
@@ -41,6 +42,11 @@ class Module extends Model
     public function moduleSCourses()
     {
         return $this->belongsToMany(Course::class);
+    }
+
+    public function module_level()
+    {
+        return $this->belongsTo(Level::class, 'module_level_id');
     }
 
     protected function serializeDate(DateTimeInterface $date)
