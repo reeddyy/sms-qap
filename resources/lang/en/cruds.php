@@ -229,6 +229,8 @@ return [
             'deleted_at_helper'    => ' ',
             'note'                 => 'Note',
             'note_helper'          => ' ',
+            'module_level'         => 'Module Level',
+            'module_level_helper'  => ' ',
         ],
     ],
     'classIntake' => [
